@@ -22,7 +22,7 @@ const Header = (title, date, temp) => {
   const span_date = helper_create_tag({
     type: "span",
     classArray: ["date"],
-    textContent: date,
+    textContent: date),
   });
   const h1 = helper_create_tag({ type: "h1", textContent: title });
 
