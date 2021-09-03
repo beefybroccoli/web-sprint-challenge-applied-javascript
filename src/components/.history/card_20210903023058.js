@@ -52,8 +52,8 @@ const Card = (article) => {
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
-  [img].forEach((eachChild) => {
-    div_imgContainer.appendChild(eachChild);
+  [img].forEach((child) => {
+    div_imgContainer.appendChild(child);
   });
 
   //----------add children to parent
@@ -61,8 +61,8 @@ const Card = (article) => {
   //     <div class="img-container">  ... </div>
   //     <span>By { authorName }</span>
   //   </div>
-  [div_imgContainer, span_author].forEach((eachChild) => {
-    div_author.appendChild(eachChild);
+  [div_imgContainer, span_author].forEach((child) => {
+    div_author.appendChild(child);
   });
 
   //----------add children to parent
@@ -70,8 +70,8 @@ const Card = (article) => {
   //   <div class="headline">{ headline }</div>
   //   <div class="author"> .... </div>
   // </div>
-  [div_headline, div_author].forEach((eachChild) => {
-    div_card.appendChild(eachChild);
+  [div_headline, div_author].forEach((child) => {
+    div_card.appendChild(child);
   });
 
   //return statement

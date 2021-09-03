@@ -52,8 +52,8 @@ const Card = (article) => {
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
-  [img].forEach((eachChild) => {
-    div_imgContainer.appendChild(eachChild);
+  [img].forEach((child) => {
+    div_imgContainer.appendChild(child);
   });
 
   //----------add children to parent

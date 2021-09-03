@@ -29,8 +29,8 @@ const Header = (title, date, temp) => {
     textContent: temp,
   });
 
-  [span_date, h1, span_temp].forEach((eachChild) => {
-    div_header.appendChild(eachChild);
+  [span_date, h1, span_temp].forEach((child) => {
+    div_header.appendChild(child);
   });
 
   return div_header;
