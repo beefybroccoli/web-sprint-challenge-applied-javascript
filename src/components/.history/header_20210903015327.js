@@ -15,14 +15,12 @@ const Header = (title, date, temp) => {
   //
 
   const div_header = helper_create_tag({ type: "div", classArray: ["header"] });
-
-  let rawDate = new Date(date);
-  // let tempDate = rawDate.getDate();
-
+  
+  let tempDate = Date(date);
   const span_date = helper_create_tag({
-    type: "span",
+    tye: "span",
     classArray: ["date"],
-    textContent: Date(date),
+    textContent: temp,
   });
   const h1 = helper_create_tag({ type: "h1", textContent: title });
 
@@ -47,7 +45,7 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
   const headerAppender = document.querySelector(selector);
-  headerAppender.appendChild(Header("title 1", "03/15/2021", "(some text)"));
+  headerAppender.appendChild(Header("title 1", "Aug 18, 2021", "(some text)"));
   return headerAppender;
 };
 
