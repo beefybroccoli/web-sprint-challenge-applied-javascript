@@ -95,19 +95,17 @@ const cardAppender = (selector) => {
 
   api_data &&
     api_data.then((api_data) => {
-      // console.log(api_data);
-      // console.log(api_data.articles.length);
+      console.log(api_data);
+      console.log(api_data.articles.length);
+      //data_array = ["javascript", "bootstrap","technology", "jquery","node.js"]
+      // const data_array = api_data.topics;
+      // cardAppender.appendChild(Tabs(data_array));
 
-      for (let key of Object.keys(api_data)) {
-        console.log(`key = ${key}`);
-        for (let subkey of Object.keys(api_data[key])) {
-          // console.log(`subkey = ${subkey}`);
-          // console.log(api_data[key][subkey].length);
-          const temp_array = api_data[key][subkey];
-          temp_array.forEach((eachArticle) => {
-            cardAppender.appendChild(Card(eachArticle));
-          });
-        }
+      for (let key of Object.keys(api_data["articles"])) {
+        console.log(key);
+        console.log(api_data["articles"][key]);
+        const temp_array = api_data["articles"][key];
+        
       }
     });
 };

@@ -1,4 +1,4 @@
-import { helper_create_tag, helper_axios } from "../helper/helper";
+import { helper_create_tag } from "../helper/helper";
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -90,25 +90,18 @@ const cardAppender = (selector) => {
 
   const cardAppender = document.querySelector(selector);
   const PORT_NUMBER = 5001;
-  const URL_API = `http://localhost:${PORT_NUMBER}/api/articles`;
+  const URL_API = `http://localhost:${PORT_NUMBER}/api/topics`;
   const api_data = helper_axios(URL_API);
 
   api_data &&
     api_data.then((api_data) => {
       // console.log(api_data);
-      // console.log(api_data.articles.length);
+      // console.log(Array.from(api_data.topics).length);
 
-      for (let key of Object.keys(api_data)) {
-        console.log(`key = ${key}`);
-        for (let subkey of Object.keys(api_data[key])) {
-          // console.log(`subkey = ${subkey}`);
-          // console.log(api_data[key][subkey].length);
-          const temp_array = api_data[key][subkey];
-          temp_array.forEach((eachArticle) => {
-            cardAppender.appendChild(Card(eachArticle));
-          });
-        }
-      }
+      //data_array = ["javascript", "bootstrap","technology", "jquery","node.js"]
+      const data_array = api_data.topics;
+
+      cardAppender.appendChild(Tabs(data_array));
     });
 };
 

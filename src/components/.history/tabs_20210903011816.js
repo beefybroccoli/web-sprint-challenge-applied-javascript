@@ -52,8 +52,12 @@ const tabsAppender = (selector) => {
       //data_array = ["javascript", "bootstrap","technology", "jquery","node.js"]
       const data_array = api_data.topics;
 
-      tabsAppender.appendChild(Tabs(data_array));
+      data_array.forEach((child) => {
+        tabsAppender.appendChild(child);
+      });
     });
+
+  return tabsAppender;
 };
 
 export { Tabs, tabsAppender };

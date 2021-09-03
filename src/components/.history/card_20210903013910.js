@@ -95,8 +95,8 @@ const cardAppender = (selector) => {
 
   api_data &&
     api_data.then((api_data) => {
-      // console.log(api_data);
-      // console.log(api_data.articles.length);
+      console.log(api_data);
+      console.log(api_data.articles.length);
 
       for (let key of Object.keys(api_data)) {
         console.log(`key = ${key}`);

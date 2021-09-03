@@ -18,14 +18,28 @@ const Tabs = (topics) => {
 
   //create tags
   const div_topics = helper_create_tag({ type: "div", classArray: ["topics"] });
-  topics.forEach((eachTopic) => {
-    const temp_div = helper_create_tag({
-      type: "div",
-      classArray: ["tab"],
-      textContent: eachTopic,
-    });
-    div_topics.appendChild(temp_div);
+  const div_tab_javascript = helper_create_tag({
+    type: "div",
+    classArray: ["tab"],
+    textContent: "javascript",
   });
+  const div_tab_bootstrap = helper_create_tag({
+    type: "div",
+    classArray: ["tab"],
+    textContent: "bootstrap",
+  });
+  const div_tab_technology = helper_create_tag({
+    type: "div",
+    classArray: ["tab"],
+    textContent: "technology",
+  });
+
+  //add child to parent
+  [div_tab_javascript, div_tab_bootstrap, div_tab_technology].forEach(
+    (child) => {
+      div_topics.appendChild(child);
+    }
+  );
 
   //return div_topics
   return div_topics;
@@ -40,20 +54,14 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
   const tabsAppender = document.querySelector(selector);
-  const PORT_NUMBER = 5001;
-  const URL_API = `http://localhost:${PORT_NUMBER}/api/topics`;
-  const api_data = helper_axios(URL_API);
 
-  api_data &&
-    api_data.then((api_data) => {
-      // console.log(api_data);
-      // console.log(Array.from(api_data.topics).length);
+  const api_data = helper_axios("http://localhost:5000/api/topics");
 
-      //data_array = ["javascript", "bootstrap","technology", "jquery","node.js"]
-      const data_array = api_data.topics;
+  api_data.then((api_data)=>{
+    api
+  })
 
-      tabsAppender.appendChild(Tabs(data_array));
-    });
+  return tabsAppender;
 };
 
 export { Tabs, tabsAppender };

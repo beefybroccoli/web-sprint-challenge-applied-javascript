@@ -1,4 +1,4 @@
-import { helper_create_tag, helper_axios } from "../helper/helper";
+import { helper_create_tag } from "../helper/helper";
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -31,6 +31,7 @@ const Card = (article) => {
   const div_author = helper_create_tag({
     type: "div",
     classArray: ["author"],
+    textContent: article.author,
   });
   //     <div class="img-container">
   const div_imgContainer = helper_create_tag({
@@ -40,7 +41,7 @@ const Card = (article) => {
   //       <img src={ authorPhoto }>
   const img = helper_create_tag({
     type: "img",
-    src: article.authorPhoto,
+    textContent: article.authorPhoto,
   });
   //     <span>By { authorName }</span>
   const span_author = helper_create_tag({
@@ -52,9 +53,7 @@ const Card = (article) => {
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
-  [img].forEach((child) => {
-    div_imgContainer.appendChild(child);
-  });
+  div_imgContainer.appendChild(img);
 
   //----------add children to parent
   //   <div class="author">
@@ -73,9 +72,6 @@ const Card = (article) => {
   [div_headline, div_author].forEach((child) => {
     div_card.appendChild(child);
   });
-
-  //return statement
-  return div_card;
 };
 
 const cardAppender = (selector) => {
@@ -87,29 +83,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-
-  const cardAppender = document.querySelector(selector);
-  const PORT_NUMBER = 5001;
-  const URL_API = `http://localhost:${PORT_NUMBER}/api/articles`;
-  const api_data = helper_axios(URL_API);
-
-  api_data &&
-    api_data.then((api_data) => {
-      // console.log(api_data);
-      // console.log(api_data.articles.length);
-
-      for (let key of Object.keys(api_data)) {
-        console.log(`key = ${key}`);
-        for (let subkey of Object.keys(api_data[key])) {
-          // console.log(`subkey = ${subkey}`);
-          // console.log(api_data[key][subkey].length);
-          const temp_array = api_data[key][subkey];
-          temp_array.forEach((eachArticle) => {
-            cardAppender.appendChild(Card(eachArticle));
-          });
-        }
-      }
-    });
 };
 
 export { Card, cardAppender };

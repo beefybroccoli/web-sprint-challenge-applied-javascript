@@ -42,7 +42,7 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
   const headerAppender = document.querySelector(selector);
-  headerAppender.appendChild(Header("title 1", "yesterday", "(some text)"));
+  headerAppender
   return headerAppender;
 };
 

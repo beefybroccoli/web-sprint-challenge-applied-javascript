@@ -1,4 +1,4 @@
-import { helper_create_tag, helper_axios } from "../helper/helper";
+import { helper_create_tag } from "../helper/helper";
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -52,7 +52,8 @@ const Card = (article) => {
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
-  [img].forEach((child) => {
+  div_imgContainer.appendChild(img);
+  [imd].forEach((child) => {
     div_imgContainer.appendChild(child);
   });
 
@@ -87,29 +88,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-
-  const cardAppender = document.querySelector(selector);
-  const PORT_NUMBER = 5001;
-  const URL_API = `http://localhost:${PORT_NUMBER}/api/articles`;
-  const api_data = helper_axios(URL_API);
-
-  api_data &&
-    api_data.then((api_data) => {
-      // console.log(api_data);
-      // console.log(api_data.articles.length);
-
-      for (let key of Object.keys(api_data)) {
-        console.log(`key = ${key}`);
-        for (let subkey of Object.keys(api_data[key])) {
-          // console.log(`subkey = ${subkey}`);
-          // console.log(api_data[key][subkey].length);
-          const temp_array = api_data[key][subkey];
-          temp_array.forEach((eachArticle) => {
-            cardAppender.appendChild(Card(eachArticle));
-          });
-        }
-      }
-    });
 };
 
 export { Card, cardAppender };

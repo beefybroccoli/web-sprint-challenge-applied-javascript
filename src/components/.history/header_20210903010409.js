@@ -43,6 +43,8 @@ const headerAppender = (selector) => {
   //
   const headerAppender = document.querySelector(selector);
   headerAppender.appendChild(Header("title 1", "yesterday", "(some text)"));
+  headerAppender.appendChild(Header("title 2", "today", "(some text)"));
+  headerAppender.appendChild(Header("title 3", "yesterday", "(some text)"));
   return headerAppender;
 };
 

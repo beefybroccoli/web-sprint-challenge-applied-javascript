@@ -54,6 +54,8 @@ const tabsAppender = (selector) => {
 
       tabsAppender.appendChild(Tabs(data_array));
     });
+
+  return tabsAppender;
 };
 
 export { Tabs, tabsAppender };

@@ -27,6 +27,13 @@ const Tabs = (topics) => {
     div_topics.appendChild(temp_div);
   });
 
+  //add child to parent
+  [div_tab_javascript, div_tab_bootstrap, div_tab_technology].forEach(
+    (child) => {
+      div_topics.appendChild(child);
+    }
+  );
+
   //return div_topics
   return div_topics;
 };
@@ -52,8 +59,12 @@ const tabsAppender = (selector) => {
       //data_array = ["javascript", "bootstrap","technology", "jquery","node.js"]
       const data_array = api_data.topics;
 
-      tabsAppender.appendChild(Tabs(data_array));
+      data_array.forEach((child) => {
+        tabsAppender.appendChild(child);
+      });
     });
+
+  return tabsAppender;
 };
 
 export { Tabs, tabsAppender };
