@@ -1,5 +1,3 @@
-import { helper_create_tag } from "../helper/helper";
-
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -15,35 +13,7 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-
-  //create tags
-  const div_topics = helper_create_tag({ type: "div", classArray: ["topics"] });
-  const div_tab_javascript = helper_create_tag({
-    type: "div",
-    classArray: ["tab"],
-    textContent: "javascript",
-  });
-  const div_tab_bootstrap = helper_create_tag({
-    type: "div",
-    classArray: ["tab"],
-    textContent: "bootstrap",
-  });
-  const div_tab_technology = helper_create_tag({
-    type: "div",
-    classArray: ["tab"],
-    textContent: "technology",
-  });
-
-  //add child to parent
-  [div_tab_javascript, div_tab_bootstrap, div_tab_technology].forEach(
-    (child) => {
-      div_topics.appendChild(child);
-    }
-  );
-
-  //return div_topics
-  return div_topics;
-};
+}
 
 const tabsAppender = (selector) => {
   // TASK 4
@@ -53,8 +23,6 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
-  const tabsAppender = document.querySelector(selector);
-  return tabsAppender;
-};
+}
 
-export { Tabs, tabsAppender };
+export { Tabs, tabsAppender }

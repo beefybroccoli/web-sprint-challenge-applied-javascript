@@ -40,9 +40,6 @@ const Tabs = (topics) => {
       div_topics.appendChild(child);
     }
   );
-
-  //return div_topics
-  return div_topics;
 };
 
 const tabsAppender = (selector) => {

@@ -14,7 +14,7 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 
-  const div_header = helper_create_tag({ type: "div", classArray: ["header"] });
+  const div = helper_create_tag({ type: "div", classArray: ["header"] });
   const span_date = helper_create_tag({
     tye: "span",
     classArray: ["date"],
@@ -24,14 +24,11 @@ const Header = (title, date, temp) => {
   const span_temp = helper_create_tag({
     type: "span",
     classArray: ["temp"],
-    textContent: temp,
+    temp,
   });
 
-  [span_date, h1, span_temp].forEach((child) => {
-    div_header.appendChild(child);
-  });
+  [span_date, h1, span_temp].forEach()
 
-  return div_header;
 };
 
 const headerAppender = (selector) => {
@@ -41,8 +38,6 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-  const headerAppender = document.querySelector(selector);
-  return headerAppender;
 };
 
 export { Header, headerAppender };

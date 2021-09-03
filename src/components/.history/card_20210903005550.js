@@ -60,7 +60,7 @@ const Card = (article) => {
   //     <span>By { authorName }</span>
   //   </div>
 
-  //----------add children to parent
+  //----------add childen to parent
   // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author"> .... </div>

@@ -41,8 +41,7 @@ const Tabs = (topics) => {
     }
   );
 
-  //return div_topics
-  return div_topics;
+  //return 
 };
 
 const tabsAppender = (selector) => {

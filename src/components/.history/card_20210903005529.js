@@ -48,19 +48,21 @@ const Card = (article) => {
     type: "span",
     textContent: `By ${article.authorName}`,
   });
+  //   </div>
+  // </div>
 
-  //----------add children to parent
+  //----------add childen to parent
   //     <div class="img-container">
   //       <img src={ authorPhoto }>
   //     </div>
 
-  //----------add children to parent
+  //----------add childen to parent
   //   <div class="author">
-  //     <div class="img-container">  ... </div>
+  //     <div class="img-container">  ...    </div>
   //     <span>By { authorName }</span>
   //   </div>
 
-  //----------add children to parent
+  //----------add childen to parent
   // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author"> .... </div>

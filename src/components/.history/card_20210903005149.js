@@ -1,3 +1,4 @@
+
 import { helper_create_tag } from "../helper/helper";
 const Card = (article) => {
   // TASK 5
@@ -20,52 +21,22 @@ const Card = (article) => {
   //
 
   // <div class="card">
-  const div_card = helper_create_tag({ type: "div", classArray: ["card"] });
+  const div_card = helper_create_tag({type:"div", classArray:['card']})
   //   <div class="headline">{ headline }</div>
-  const div_headline = helper_create_tag({
-    type: "div",
-    classArray: ["headline"],
-    textContent: article.headline,
-  });
+  const div_headline = helper_create_tag({type:"div", classArray:["headline"], textContent:article.headline})
   //   <div class="author">
-  const div_author = helper_create_tag({
-    type: "div",
-    classArray: ["author"],
-    textContent: article.author,
-  });
+  const div_author = helper_create_tag({type:"div", classArray:["author"], textContent:article.author})
   //     <div class="img-container">
-  const div_imgContainer = helper_create_tag({
-    type: "div",
-    classArray: ["img-container"],
-  });
+  const div_imgContainer = helper_create_tag({type:"div", classArray:["img-container"], textContent:""})
   //       <img src={ authorPhoto }>
-  const img = helper_create_tag({
-    type: "img",
-    textContent: article.authorPhoto,
-  });
-  //     <span>By { authorName }</span>
-  const span_author = helper_create_tag({
-    type: "span",
-    textContent: `By ${article.authorName}`,
-  });
-
-  //----------add children to parent
-  //     <div class="img-container">
-  //       <img src={ authorPhoto }>
+  const  = helper_create_tag({type:"div", classArray:[], textContent:""})
   //     </div>
-
-  //----------add children to parent
-  //   <div class="author">
-  //     <div class="img-container">  ... </div>
+  const  = helper_create_tag({type:"div", classArray:[], textContent:""})
   //     <span>By { authorName }</span>
+  const  = helper_create_tag({type:"div", classArray:[], textContent:""})
   //   </div>
-
-  //----------add children to parent
-  // <div class="card">
-  //   <div class="headline">{ headline }</div>
-  //   <div class="author"> .... </div>
   // </div>
-};
+}
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -76,6 +47,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-};
+}
 
-export { Card, cardAppender };
+export { Card, cardAppender }

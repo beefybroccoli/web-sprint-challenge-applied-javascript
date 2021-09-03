@@ -40,9 +40,6 @@ const Tabs = (topics) => {
       div_topics.appendChild(child);
     }
   );
-
-  //return div_topics
-  return div_topics;
 };
 
 const tabsAppender = (selector) => {
@@ -53,8 +50,6 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
-  const tabsAppender = document.querySelector(selector);
-  return tabsAppender;
 };
 
 export { Tabs, tabsAppender };
